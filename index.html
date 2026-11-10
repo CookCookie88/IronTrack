@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>IronTrack Pro</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0b0f19">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app-container">
+    <header class="app-header">
+      <div class="header-title">
+        <h1 id="view-title">Dashboard</h1>
+      </div>
+      <div class="header-actions">
+        <button id="quick-timer-btn" class="icon-btn" title="Rest Timer">⏱️ Rest</button>
+      </div>
+    </header>
+
+    <main id="main-content" class="content-area">
+      <!-- Dynamic Views Rendered Here -->
+    </main>
+
+    <div id="active-workout-banner" class="active-banner hidden">
+      <div class="banner-info">
+        <span class="pulse-dot"></span>
+        <div>
+          <strong id="banner-workout-name">Workout in Progress</strong>
+          <small id="banner-elapsed" class="text-secondary">00:00</small>
+        </div>
+      </div>
+      <button id="resume-workout-btn" class="btn btn-primary btn-sm">Resume</button>
+    </div>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-target="dashboard">
+        <span class="nav-icon">📊</span>
+        <span class="nav-label">Home</span>
+      </button>
+      <button class="nav-item" data-target="templates">
+        <span class="nav-icon">📋</span>
+        <span class="nav-label">Workout</span>
+      </button>
+      <button class="nav-item" data-target="history">
+        <span class="nav-icon">🕒</span>
+        <span class="nav-label">History</span>
+      </button>
+      <button class="nav-item" data-target="analytics">
+        <span class="nav-icon">📈</span>
+        <span class="nav-label">Analytics</span>
+      </button>
+      <button class="nav-item" data-target="tools">
+        <span class="nav-icon">🛠️</span>
+        <span class="nav-label">Tools</span>
+      </button>
+      <button class="nav-item" data-target="settings">
+        <span class="nav-icon">⚙️</span>
+        <span class="nav-label">Settings</span>
+      </button>
+    </nav>
+  </div>
+
+  <div id="timer-overlay" class="modal hidden">
+    <div class="modal-content timer-modal">
+      <h3>Rest Timer</h3>
+      <div id="timer-display" class="timer-display">01:30</div>
+      <div class="timer-controls">
+        <button class="btn btn-secondary" data-time="-30">-30s</button>
+        <button class="btn btn-secondary" data-time="+30">+30s</button>
+        <button id="timer-toggle-btn" class="btn btn-primary">Pause</button>
+        <button id="timer-close-btn" class="btn btn-outline">Dismiss</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="setup-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Welcome to IronTrack Pro</h2>
+      <p class="text-secondary mb-4">Set your initial reconditioning weights (RPE 6 / 3–4 RIR) to start rebuilding strength safely:</p>
+      <form id="setup-form">
+        <div class="form-group">
+          <label>Current Body Weight (lb)</label>
+          <input type="number" id="setup-bw" value="170" step="0.5" required>
+        </div>
+        <div class="form-group">
+          <label>Squat Starting Working Weight (lb)</label>
+          <input type="number" id="setup-squat" value="185" step="5" required>
+        </div>
+        <div class="form-group">
+          <label>Bench Press Starting Working Weight (lb)</label>
+          <input type="number" id="setup-bench" value="135" step="5" required>
+        </div>
+        <div class="form-group">
+          <label>Deadlift Starting Working Weight (lb)</label>
+          <input type="number" id="setup-deadlift" value="225" step="5" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Save & Start Training</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
