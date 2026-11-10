@@ -2,12 +2,6 @@
 
 IronTrack is a custom, mobile-first strength and running tracker inspired by Strong Pro. Built with vanilla HTML, CSS, JavaScript, and IndexedDB, it works offline as a Progressive Web App (PWA).
 
-## Hosting Over HTTPS (Required for PWA & Service Worker)
-Because modern mobile browsers require a secure HTTPS origin to register service workers and enable "Add to Home Screen" PWA installation, you can easily host this static app for free on:
-- **GitHub Pages**
-- **Netlify** (Drag and drop your project folder)
-- **Vercel**
-
 ## Installing on iPhone (iOS Safari)
 1. Deploy or host the files on a secure HTTPS URL (e.g., Netlify or GitHub Pages).
 2. Open the URL in **Safari** on your iPhone.
